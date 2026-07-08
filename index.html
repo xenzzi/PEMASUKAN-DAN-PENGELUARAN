@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>💸 Smart Expense Tracker</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- ========================= -->
+    <!-- HEADER -->
+    <!-- ========================= -->
+
+    <div class="header">
+
+        <h1>💸 Smart Expense Tracker</h1>
+
+        <p>Kelola pemasukan dan pengeluaran dengan mudah</p>
+
+    </div>
+
+    <!-- ========================= -->
+    <!-- DASHBOARD -->
+    <!-- ========================= -->
+
+    <div class="cards">
+
+        <!-- Saldo Awal -->
+
+        <div class="card">
+
+            <h3>💰 Saldo Awal</h3>
+
+            <div class="input-rp">
+
+                <span>Rp</span>
+
+                <input
+                    type="text"
+                    id="saldoAwal"
+                    placeholder="0"
+                    autocomplete="off"
+                    onkeyup="formatInput(this)">
+
+            </div>
+
+            <button onclick="setSaldo()">
+
+                Simpan Saldo
+
+            </button>
+
+        </div>
+
+        <!-- Tambah Saldo -->
+
+        <div class="card">
+
+            <h3>➕ Tambah Saldo</h3>
+
+            <div class="input-rp">
+
+                <span>Rp</span>
+
+                <input
+                    type="text"
+                    id="tambahSaldo"
+                    placeholder="0"
+                    autocomplete="off"
+                    onkeyup="formatInput(this)">
+
+            </div>
+
+            <button onclick="tambahSaldo()">
+
+                Tambah Saldo
+
+            </button>
+
+        </div>
+
+        <!-- Saldo Masuk -->
+
+        <div class="card">
+
+            <h3>📥 Total Saldo Masuk</h3>
+
+            <h2 id="saldoMasuk">
+
+                Rp 0
+
+            </h2>
+
+        </div>
+
+        <!-- Pengeluaran -->
+
+        <div class="card">
+
+            <h3>📉 Total Pengeluaran</h3>
+
+            <h2 id="total">
+
+                Rp 0
+
+            </h2>
+
+        </div>
+
+    </div>
+
+    <!-- ========================= -->
+    <!-- SISA SALDO -->
+    <!-- ========================= -->
+
+    <div class="saldo-box">
+
+        <small>Sisa Saldo Saat Ini</small>
+
+        <h1 id="sisa">
+
+            Rp 0
+
+        </h1>
+
+    </div>
+
+    <!-- ========================= -->
+    <!-- FORM INPUT -->
+    <!-- ========================= -->
+
+    <div class="form">
+
+        <input
+            type="text"
+            id="nama"
+            placeholder="Nama Pengeluaran"
+            autocomplete="off">
+
+        <select id="kategori">
+
+            <option value="🍔 Makanan">🍔 Makanan</option>
+
+            <option value="🚗 Transportasi">🚗 Transportasi</option>
+
+            <option value="🛒 Belanja">🛒 Belanja</option>
+
+            <option value="💡 Tagihan">💡 Tagihan</option>
+
+            <option value="🎮 Hiburan">🎮 Hiburan</option>
+
+            <option value="🏥 Kesehatan">🏥 Kesehatan</option>
+
+            <option value="🎓 Pendidikan">🎓 Pendidikan</option>
+
+            <option value="📦 Lainnya">📦 Lainnya</option>
+
+        </select>
+
+        <div class="input-rp">
+
+            <span>Rp</span>
+
+            <input
+                type="text"
+                id="harga"
+                placeholder="0"
+                autocomplete="off"
+                onkeyup="formatInput(this)">
+
+        </div>
+
+        <button onclick="tambah()">
+
+            + Tambah
+
+        </button>
+
+    </div>
+
+    <!-- ========================= -->
+    <!-- TABEL -->
+    <!-- ========================= -->
+
+    <div class="table-wrapper">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>No</th>
+
+                    <th>Tanggal & Jam</th>
+
+                    <th>Kategori</th>
+
+                    <th>Nama Pengeluaran</th>
+
+                    <th>Nominal</th>
+
+                    <th>Aksi</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="data">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <!-- ========================= -->
+    <!-- BUTTON RESET -->
+    <!-- ========================= -->
+
+    <div class="footer-action">
+
+        <button class="hapus" onclick="resetData()">
+
+            🗑 Reset Semua Data
+
+        </button>
+
+    </div>
+
+    <!-- ========================= -->
+    <!-- FOOTER -->
+    <!-- ========================= -->
+
+    <footer class="footer">
+
+        <p>
+
+            © 2026 Smart Expense Tracker
+
+        </p>
+
+    </footer>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
